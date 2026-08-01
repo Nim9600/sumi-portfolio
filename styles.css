@@ -1,6 +1,6 @@
 /* =========================================================
    Sumith — Digital Newspaper Portfolio
-   styles.css  (v2 — boxed layout, 1px rules)
+   styles.css  (v3 — portrait height-aligned to text columns)
    ========================================================= */
 
 :root {
@@ -8,15 +8,15 @@
   --ink: #171614;
   --ink-soft: #55534d;
   --ink-mute: #6f6d66;
-  --line: #cfcabd;          /* hairline rules */
-  --line-strong: #171614;   /* black rules */
+  --line: #cfcabd;
+  --line-strong: #171614;
   --badge-bg: #171614;
   --badge-fg: #f4f1ea;
   --serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   --maxw: 1180px;
   --pad: 40px;
-  --gut: 26px;              /* column gutter */
+  --gut: 26px;
 }
 
 html[data-theme="dark"] {
@@ -32,8 +32,7 @@ html[data-theme="dark"] {
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-
-html, body { max-width: 100%; overflow-x: hidden; }  /* kill horizontal scroll */
+html, body { max-width: 100%; overflow-x: hidden; }  /* no horizontal scroll */
 
 body {
   background: var(--bg);
@@ -47,11 +46,7 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 
-.paper {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 24px var(--pad) 28px;
-}
+.paper { max-width: var(--maxw); margin: 0 auto; padding: 24px var(--pad) 28px; }
 
 /* ======================= MASTHEAD (1px rules) ======================= */
 .masthead { border-top: 1px solid var(--line-strong); padding-top: 12px; }
@@ -75,21 +70,18 @@ a { color: inherit; text-decoration: none; }
 .mobile-nav.show { display: flex; }
 .mobile-nav a { padding: 9px 4px; font-size: 14px; letter-spacing: .05em; border-bottom: 1px solid var(--line); }
 
-/* ======================= HERO (keeps two lines) ======================= */
+/* ======================= HERO (auto-fit via JS, no overflow) ======================= */
 .hero { padding: 30px 0 22px; }
 .hero__title {
   font-family: var(--serif);
   font-weight: 500;
-  /* JS auto-fits this so the longest line exactly fills the width.
-     clamp() is the safe fallback if JS is disabled — no overflow. */
-  font-size: clamp(30px, 7vw, 90px);
+  font-size: clamp(28px, 6.6vw, 88px);   /* safe fallback if JS off */
   line-height: 1.0;
   letter-spacing: -0.015em;
-  white-space: normal;          /* NEVER nowrap — that caused the scroll */
+  white-space: normal;                    /* never nowrap */
   overflow-wrap: break-word;
   max-width: 100%;
 }
-.hero__title br { display: block; }
 
 /* ======================= DATELINE (1px rules) ======================= */
 .dateline {
@@ -104,16 +96,15 @@ a { color: inherit; text-decoration: none; }
 .dateline__center { text-align: center; }
 .dateline__right  { text-align: right; }
 
-/* ======================= LEAD GRID — BOXED w/ vertical rules ======================= */
+/* ======================= LEAD GRID — boxed, equal-height columns ======================= */
 .lead-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1.3fr 1fr;
   padding: 22px 0 28px;
-  align-items: stretch;         /* portrait fills same height as text cols */
+  align-items: stretch;         /* all three columns share the same height */
 }
 .col { min-width: 0; }
 
-/* vertical dividers between About | Portrait | Experience */
 .col--about {
   padding-right: var(--gut);
   border-right: 1px solid var(--line);
@@ -122,31 +113,35 @@ a { color: inherit; text-decoration: none; }
   padding-left: var(--gut);
   border-left: 1px solid var(--line);
 }
-.col--portrait { padding: 0 var(--gut); display: flex; }
 
-/* badge/tag — fitted tight to content */
+/* Portrait column stretches to the text height; image crops to fit */
+.col--portrait { padding: 0 var(--gut); display: flex; }
+.portrait {
+  width: 100%;
+  height: 100%;                 /* fill the stretched column height */
+  border: 1px solid var(--line-strong);
+  overflow: hidden;
+  background: #ddd;
+}
+.portrait img {
+  width: 100%;
+  height: 100%;                 /* crop instead of stretching long */
+  object-fit: cover;
+  object-position: center 30%;  /* keep the face nicely framed */
+  filter: grayscale(100%);
+}
+
+/* badge/tag — content-fit */
 .tag {
   display: inline-block;
   background: var(--badge-bg);
   color: var(--badge-fg);
-  font-size: 10px; font-weight: 600; letter-spacing: .12em;
-  line-height: 1;
-  padding: 4px 6px;
-  margin-bottom: 16px;
+  font-size: 10px; font-weight: 600; letter-spacing: .12em; line-height: 1;
+  padding: 4px 6px; margin-bottom: 16px;
 }
 
-.col__headline {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 27px;              /* reduced so it fits like the image */
-  line-height: 1.1;
-  margin-bottom: 18px;
-}
+.col__headline { font-family: var(--serif); font-weight: 500; font-size: 27px; line-height: 1.1; margin-bottom: 18px; }
 .col__body { font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 22px; }
-
-/* Portrait fitted to content height, top-aligned */
-.portrait { width: 100%; border: 1px solid var(--line-strong); overflow: hidden; background: #ddd; }
-.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: grayscale(100%); }
 
 /* Experience blocks */
 .xp { padding: 16px 0; border-bottom: 1px solid var(--line); }
@@ -159,17 +154,15 @@ a { color: inherit; text-decoration: none; }
 .link-arrow {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 13px; font-weight: 600; letter-spacing: .01em;
-  margin-top: 18px;
-  border-bottom: 1.5px solid var(--ink); padding-bottom: 2px;
+  margin-top: 18px; border-bottom: 1.5px solid var(--ink); padding-bottom: 2px;
   transition: gap .25s ease;
 }
 .link-arrow span { transition: transform .25s ease; }
 .link-arrow:hover { gap: 12px; }
 .link-arrow:hover span { transform: translateX(3px); }
-/* plain (no underline) variant — e.g. More about me, View full journey */
 .link-arrow--plain { border-bottom: none; padding-bottom: 0; }
 
-/* Horizontal rules — all 1px */
+/* Horizontal rules — 1px */
 .rule { border: none; border-top: 1px solid var(--line); margin: 22px 0; }
 .rule--thick { border-top: 1px solid var(--line-strong); margin: 26px 0; }
 
@@ -217,7 +210,7 @@ a { color: inherit; text-decoration: none; }
 .travel__item h4 { font-size: 14.5px; font-weight: 600; margin-bottom: 3px; }
 .travel__item p  { font-size: 12.5px; color: var(--ink-soft); line-height: 1.45; }
 
-/* Tools + quote (inner vertical divider) */
+/* Tools + quote */
 .tools-quote { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
 .tools__list { list-style: none; }
 .tools__list li { font-family: var(--serif); font-size: 16px; padding: 2px 0; }
@@ -248,11 +241,10 @@ html[data-theme="dark"] .icon-moon { display: block; }
 /* ======================= RESPONSIVE ======================= */
 @media (max-width: 960px) {
   :root { --pad: 26px; }
-  .hero__title { white-space: normal; }         /* allow wrap on small screens */
   .lead-grid { grid-template-columns: 1fr; gap: 28px; }
   .col--about, .col--experience { border: none; padding: 0; }
   .col--portrait { order: -1; padding: 0; }
-  .portrait { aspect-ratio: 4 / 5; }
+  .portrait { height: auto; aspect-ratio: 4 / 5; }   /* natural height when stacked */
   .projects { grid-template-columns: 1fr; }
   .project { border-right: none; border-top: 1px solid var(--line); padding: 22px 0 0; }
   .project:first-child { border-top: none; padding-top: 0; }
