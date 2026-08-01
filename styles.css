@@ -107,7 +107,7 @@ a { color: inherit; text-decoration: none; }
 /* ======================= LEAD GRID — BOXED w/ vertical rules ======================= */
 .lead-grid {
   display: grid;
-  grid-template-columns: 1fr 1.3fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 22px 0 28px;
   align-items: stretch;         /* portrait fills same height as text cols */
 }
