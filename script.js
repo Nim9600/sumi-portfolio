@@ -16,7 +16,6 @@
       menuBtn.setAttribute("aria-expanded", String(open));
       mobileNav.setAttribute("aria-hidden", String(!open));
     });
-
     mobileNav.querySelectorAll("a").forEach(function (a) {
       a.addEventListener("click", function () {
         mobileNav.classList.remove("show");
@@ -30,13 +29,9 @@
   /* ---------- Light / Dark theme toggle ---------- */
   var root = document.documentElement;
   var themeToggle = document.getElementById("themeToggle");
-
   var saved = null;
   try { saved = localStorage.getItem("sumith-theme"); } catch (e) {}
-  if (saved === "dark" || saved === "light") {
-    root.setAttribute("data-theme", saved);
-  }
-
+  if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
   if (themeToggle) {
     themeToggle.addEventListener("click", function () {
       var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
@@ -51,13 +46,15 @@
   function fitHero() {
     if (!heroTitle) return;
     var container = heroTitle.parentElement;      // .hero
-    var avail = container.clientWidth;            // exact width inside padding
+    var avail = container.clientWidth;
     if (!avail) return;
 
-    // Split the authored lines on the <br>
+    // Safety buffer so italic/serif overhang never spills past the edge
+    var BUFFER = 6; // px
+    avail = avail - BUFFER;
+
     var lines = heroTitle.innerHTML.split(/<br\s*\/?>/i);
 
-    // Hidden measurer that mirrors the title's font settings
     var probe = document.createElement("span");
     var cs = window.getComputedStyle(heroTitle);
     probe.style.position = "absolute";
@@ -66,10 +63,9 @@
     probe.style.fontFamily = cs.fontFamily;
     probe.style.fontWeight = cs.fontWeight;
     probe.style.letterSpacing = cs.letterSpacing;
-    probe.style.fontSize = "100px";               // reference size
+    probe.style.fontSize = "100px";
     document.body.appendChild(probe);
 
-    // Find the widest line at the reference size
     var widest = 0;
     lines.forEach(function (ln) {
       probe.innerHTML = ln.trim();
@@ -78,18 +74,14 @@
     document.body.removeChild(probe);
     if (!widest) return;
 
-    // Scale so the widest line fills the available width exactly
     var size = (avail / widest) * 100;
-
-    // Clamp to sensible bounds so it never gets absurd
-    var min = 26, max = 96;
+    var min = 24, max = 92;
     size = Math.max(min, Math.min(max, size));
     heroTitle.style.fontSize = size + "px";
   }
 
   fitHero();
   window.addEventListener("resize", fitHero);
-  // Re-fit once web fonts have loaded (metrics change)
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(fitHero);
   } else {
