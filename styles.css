@@ -100,7 +100,7 @@ a { color: inherit; text-decoration: none; }
 .lead-grid {
   display: grid;
   grid-template-columns: 1fr 1.3fr 1fr;
-  padding: 22px 0 0px;
+  padding-top: 22px;
   align-items: stretch;         /* all three columns share the same height */
 }
 .col { min-width: 0; }
