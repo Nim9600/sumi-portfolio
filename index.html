@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sumith — Product Designer &amp; Creator</title>
+  <meta name="description" content="Sumith — Product Designer & Creator based in Bangalore, India. A digital newspaper portfolio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="paper">
+    <!-- ===================== MASTHEAD / NAV ===================== -->
+    <header class="masthead">
+      <div class="masthead__inner">
+        <span class="masthead__brand">SUMITH</span>
+        <span class="masthead__center">PRODUCT DESIGNER &amp; CREATOR</span>
+        <span class="masthead__right">BANGALORE, INDIA</span>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Work</a>
+        <a href="#playground">Playground</a>
+        <a href="#connect">Connect</a>
+      </nav>
+    </header>
+
+    <!-- ===================== HERO HEADLINE ===================== -->
+    <section class="hero">
+      <h1 class="hero__title">Designing digital experiences.<br />Documenting life&rsquo;s journeys.</h1>
+    </section>
+
+    <!-- ===================== DATE / EDITION BAR ===================== -->
+    <div class="dateline">
+      <span class="dateline__left">02 JUNE 2024</span>
+      <span class="dateline__center">WELCOME TO MY DIGITAL NEWSPAPER</span>
+      <span class="dateline__right">EDITION NO. 01</span>
+    </div>
+
+    <!-- ===================== MAIN 3-COLUMN GRID ===================== -->
+    <section class="lead-grid">
+      <!-- ABOUT ME -->
+      <div class="col col--about" id="about">
+        <span class="tag">ABOUT ME</span>
+        <h2 class="col__headline">I design meaningful products and capture stories that matter.</h2>
+        <p class="col__body">
+          I&rsquo;m Sumith, a Product Designer based in Bangalore. I work on
+          scalable design systems and enterprise products. When I&rsquo;m not
+          designing, I travel, explore new places, and document experiences
+          through my YouTube channel Life of Us.
+        </p>
+        <a href="#about" class="link-arrow link-arrow--plain">More about me <span>&rarr;</span></a>
+      </div>
+
+      <!-- PORTRAIT -->
+      <div class="col col--portrait">
+        <div class="portrait">
+          <img src="assets/portrait.png" alt="Portrait of Sumith wearing sunglasses" />
+        </div>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="col col--experience" id="experience">
+        <span class="tag">EXPERIENCE</span>
+        <div class="xp">
+          <p class="xp__years">2021 &ndash; Present</p>
+          <h3 class="xp__role">Product Designer</h3>
+          <p class="xp__desc">Working on enterprise products and design systems.</p>
+        </div>
+        <div class="xp">
+          <p class="xp__years">2019 &ndash; 2021</p>
+          <h3 class="xp__role">UI/UX Designer</h3>
+          <p class="xp__desc">Designed digital experiences for various web and mobile platforms.</p>
+        </div>
+        <div class="xp">
+          <p class="xp__years">2018 &ndash; 2019</p>
+          <h3 class="xp__role">Junior Designer</h3>
+          <p class="xp__desc">Started my journey in design and developed my core skills.</p>
+        </div>
+        <a href="#experience" class="link-arrow link-arrow--plain">View full journey <span>&rarr;</span></a>
+      </div>
+    </section>
+
+    <hr class="rule rule--thick" />
+
+    <!-- ===================== FEATURED WORK ===================== -->
+    <section class="work" id="work">
+      <div class="work__head">
+        <span class="tag">FEATURED WORK</span>
+        <h2 class="section-title">Selected Projects</h2>
+        <a href="#work" class="link-arrow work__all">View all projects <span>&rarr;</span></a>
+      </div>
+
+      <div class="projects">
+        <article class="project">
+          <div class="project__thumb">
+            <img src="assets/project-1.svg" alt="GIIS Design System dashboard" />
+          </div>
+          <h3 class="project__title">GIIS Design System</h3>
+          <p class="project__desc">Enterprise design system built for GIIS across platforms for consistency and scalability.</p>
+          <a href="#work" class="link-arrow">View case study <span>&rarr;</span></a>
+        </article>
+
+        <article class="project">
+          <div class="project__thumb">
+            <img src="assets/project-2.svg" alt="Media Management Platform interface" />
+          </div>
+          <h3 class="project__title">Media Management Platform</h3>
+          <p class="project__desc">A unified platform to manage, preview and distribute digital media content efficiently.</p>
+          <a href="#work" class="link-arrow">View case study <span>&rarr;</span></a>
+        </article>
+
+        <article class="project">
+          <div class="project__thumb">
+            <img src="assets/project-3.svg" alt="Project Library Dashboard" />
+          </div>
+          <h3 class="project__title">Project Library Dashboard</h3>
+          <p class="project__desc">An intuitive dashboard for students to explore and manage academic projects effortlessly.</p>
+          <a href="#work" class="link-arrow">View case study <span>&rarr;</span></a>
+        </article>
+      </div>
+    </section>
+
+    <hr class="rule rule--thick" />
+
+    <!-- ===================== BOTTOM 4-COLUMN GRID ===================== -->
+    <section class="foot-grid">
+      <!-- DESIGN PLAYGROUND -->
+      <div class="fcol fcol--playground" id="playground">
+        <span class="label">DESIGN PLAYGROUND</span>
+        <h2 class="fcol__headline">Ideas, explorations and experiments.</h2>
+        <div class="playground__img">
+          <img src="assets/playground.svg" alt="Collage of mobile app design explorations" />
+        </div>
+        <a href="#playground" class="link-arrow link-arrow--plain">Explore more <span>&rarr;</span></a>
+      </div>
+
+      <!-- TRAVEL DIARIES -->
+      <div class="fcol fcol--travel">
+        <span class="label">TRAVEL DIARIES</span>
+        <h2 class="fcol__headline">Stories from around the world.</h2>
+        <ul class="travel">
+          <li class="travel__item">
+            <span class="travel__thumb travel__thumb--1"></span>
+            <div>
+              <h4>Malaysia Diaries</h4>
+              <p>Langkawi adventures and beautiful beaches.</p>
+            </div>
+          </li>
+          <li class="travel__item">
+            <span class="travel__thumb travel__thumb--2"></span>
+            <div>
+              <h4>Bali Escape</h4>
+              <p>Exploring nature, culture and food.</p>
+            </div>
+          </li>
+          <li class="travel__item">
+            <span class="travel__thumb travel__thumb--3"></span>
+            <div>
+              <h4>Food Trails</h4>
+              <p>A journey through flavors.</p>
+            </div>
+          </li>
+        </ul>
+        <a href="#" class="link-arrow link-arrow--plain">More travel stories <span>&rarr;</span></a>
+      </div>
+
+      <!-- TOOLS + QUOTE + CONNECT -->
+      <div class="fcol fcol--tools">
+        <div class="tools-quote">
+          <div class="tools">
+            <span class="label">TOOLS I USE</span>
+            <ul class="tools__list">
+              <li>Figma</li>
+              <li>Principle</li>
+              <li>Framer</li>
+              <li>Photoshop</li>
+              <li>Illustrator</li>
+              <li>Notion</li>
+            </ul>
+          </div>
+          <div class="quote">
+            <span class="quote__mark">&ldquo;</span>
+            <p class="quote__text">Good design is as little design as possible.</p>
+            <p class="quote__author">&mdash; Dieter Rams</p>
+          </div>
+        </div>
+
+        <!-- LET'S CONNECT -->
+        <div class="connect" id="connect">
+          <span class="label">LET&rsquo;S CONNECT</span>
+          <h2 class="connect__headline">Have a project in mind?</h2>
+          <p class="connect__body">I&rsquo;m currently available for freelance projects and collaborations.</p>
+          <a class="connect__email" href="mailto:hello@lifeofus.dev">hello@lifeofus.dev</a>
+          <p class="connect__socials">
+            <a href="#">LinkedIn</a><a href="#">Dribbble</a><a href="#">Behance</a><a href="#">YouTube</a>
+          </p>
+          <a href="mailto:hello@lifeofus.dev" class="link-arrow link-arrow--plain">Say hello <span>&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule rule--thick" />
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="colophon">
+      <span class="colophon__left">&copy; 2024 SUMITH. ALL RIGHTS RESERVED.</span>
+      <span class="colophon__center">THANK YOU FOR READING.</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light / dark">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <line x1="12" y1="2.5" x2="12" y2="5"/>
+            <line x1="12" y1="19" x2="12" y2="21.5"/>
+            <line x1="2.5" y1="12" x2="5" y2="12"/>
+            <line x1="19" y1="12" x2="21.5" y2="12"/>
+            <line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/>
+            <line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/>
+            <line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/>
+            <line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/>
+          </g>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
