@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Projects — Sumith</title>
+  <meta name="description" content="All Projects by Sumith — a selection of work across product design, dashboards, mobile apps, branding and design systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="paper">
+    <!-- ===================== MASTHEAD ===================== -->
+    <header class="masthead">
+      <div class="masthead__inner">
+        <span class="masthead__brand"><a href="index.html">SUMITH</a></span>
+        <span class="masthead__center">PRODUCT DESIGNER &amp; CREATOR</span>
+        <span class="masthead__right">BANGALORE, INDIA</span>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#connect">Connect</a>
+      </nav>
+    </header>
+
+    <!-- ===================== BREADCRUMB ===================== -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">HOME</a>
+      <span class="sep">/</span>
+      <span>PROJECTS</span>
+    </nav>
+
+    <!-- ===================== HEADER ===================== -->
+    <section class="proj-head">
+      <div class="proj-head__left">
+        <h1 class="proj-head__title">All Projects</h1>
+        <p class="proj-head__lead">A selection of work that reflects my approach to design, problem solving, and building meaningful digital experiences.</p>
+      </div>
+      <div class="filter-by">
+        <span class="filter-by__label">FILTER BY</span>
+        <span class="select-wrap">
+          <select id="catSelect" aria-label="Filter by category">
+            <option value="all">All Categories</option>
+            <option value="web">Web Design</option>
+            <option value="mobile">Mobile App</option>
+            <option value="dashboard">Dashboard</option>
+            <option value="branding">Branding</option>
+            <option value="system">Design System</option>
+          </select>
+        </span>
+      </div>
+    </section>
+
+    <!-- ===================== CATEGORY TABS ===================== -->
+    <div class="cat-tabs" id="catTabs" role="tablist">
+      <button class="cat-tab active" data-cat="all" role="tab">All</button>
+      <button class="cat-tab" data-cat="web" role="tab">Web Design</button>
+      <button class="cat-tab" data-cat="mobile" role="tab">Mobile App</button>
+      <button class="cat-tab" data-cat="dashboard" role="tab">Dashboard</button>
+      <button class="cat-tab" data-cat="branding" role="tab">Branding</button>
+      <button class="cat-tab" data-cat="system" role="tab">Design System</button>
+    </div>
+
+    <!-- ===================== PROJECTS GRID ===================== -->
+    <section class="proj-grid" id="projGrid">
+      <!-- 1 -->
+      <article class="pcard" data-cats="dashboard web">
+        <div class="pcard__thumb"><img src="assets/project-2.svg" alt="Media Management Platform" /></div>
+        <h3 class="pcard__title">Media Management Platform</h3>
+        <p class="pcard__desc">A unified platform to manage, preview and distribute digital media content efficiently.</p>
+        <p class="pcard__cats">Dashboard, Web Design</p>
+        <a href="#" class="pcard__link">View project <span>&rarr;</span></a>
+      </article>
+      <!-- 2 -->
+      <article class="pcard" data-cats="dashboard web">
+        <div class="pcard__thumb"><img src="assets/project-3.svg" alt="Project Library Dashboard" /></div>
+        <h3 class="pcard__title">Project Library Dashboard</h3>
+        <p class="pcard__desc">An intuitive dashboard for students to explore and manage academic projects effortlessly.</p>
+        <p class="pcard__cats">Dashboard, Web Design</p>
+        <a href="#" class="pcard__link">View project <span>&rarr;</span></a>
+      </article>
+      <!-- 3 -->
+      <article class="pcard" data-cats="mobile">
+        <div class="pcard__thumb"><img src="assets/proj-travel.svg" alt="Travel Buddy App" /></div>
+        <h3 class="pcard__title">Travel Buddy App</h3>
+        <p class="pcard__desc">A travel companion app to discover, plan and experience new places.</p>
+        <p class="pcard__cats">Mobile App, UI/UX</p>
+        <a href="#" class="pcard__link">View project <span>&rarr;</span></a>
+      </article>
+      <!-- 4 -->
+      <article class="pcard" data-cats="branding">
+        <div class="pcard__thumb"><img src="assets/proj-brand.svg" alt="Brand Identity Zephyr" /></div>
+        <h3 class="pcard__title">Brand Identity &ndash; Zephyr</h3>
+        <p class="pcard__desc">Brand identity design for a modern sustainable fashion label.</p>
+        <p class="pcard__cats">Branding</p>
+        <a href="#" class="pcard__link">View project <span>&rarr;</span></a>
+      </article>
+      <!-- 5 -->
+      <article class="pcard" data-cats="dashboard">
+        <div class="pcard__thumb"><img src="assets/proj-analytics.svg" alt="Analytics Dashboard" /></div>
+        <h3 class="pcard__title">Analytics Dashboard</h3>
+        <p class="pcard__desc">A data analytics dashboard to visualize metrics and drive insights.</p>
+        <p class="pcard__cats">Dashboard, Data Visualization</p>
+        <a href="#" class="pcard__link">View project <span>&rarr;</span></a>
+      </article>
+      <!-- 6 -->
+      <article class="pcard" data-cats="mobile">
+        <div class="pcard__thumb"><img src="assets/proj-habit.svg" alt="Habit Tracker App" /></div>
+        <h3 class="pcard__title">Habit Tracker App</h3>
+        <p class="pcard__desc">A minimal habit tracking app to build consistency and achieve goals.</p>
+        <p class="pcard__cats">Mobile App, UI/UX</p>
+        <a href="#" class="pcard__link">View project <span>&rarr;</span></a>
+      </article>
+      <!-- 7 -->
+      <article class="pcard" data-cats="system web">
+        <div class="pcard__thumb"><img src="assets/project-1.svg" alt="Design System" /></div>
+        <h3 class="pcard__title">Design System</h3>
+        <p class="pcard__desc">A comprehensive design system to ensure consistency and scalability.</p>
+        <p class="pcard__cats">Design System, UI Kit</p>
+        <a href="#" class="pcard__link">View project <span>&rarr;</span></a>
+      </article>
+      <!-- 8 -->
+      <article class="pcard" data-cats="web">
+        <div class="pcard__thumb"><img src="assets/proj-portfolio.svg" alt="Portfolio Website" /></div>
+        <h3 class="pcard__title">Portfolio Website</h3>
+        <p class="pcard__desc">A personal portfolio website to showcase my work and journey.</p>
+        <p class="pcard__cats">Web Design</p>
+        <a href="#" class="pcard__link">View project <span>&rarr;</span></a>
+      </article>
+      <!-- 9 -->
+      <article class="pcard" data-cats="web mobile">
+        <div class="pcard__thumb"><img src="assets/proj-ecom.svg" alt="E-commerce Redesign" /></div>
+        <h3 class="pcard__title">E-commerce Redesign</h3>
+        <p class="pcard__desc">Redesigning an e-commerce experience to improve usability and conversion.</p>
+        <p class="pcard__cats">Web Design, UI/UX</p>
+        <a href="#" class="pcard__link">View project <span>&rarr;</span></a>
+      </article>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="cta">
+      <span class="cta__ico"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+      <h2 class="cta__title">Have a project in mind?</h2>
+      <p class="cta__body">Let&rsquo;s create something meaningful together.</p>
+      <a href="mailto:hello@lifeofus.dev" class="cta__btn">Get in touch <span>&rarr;</span></a>
+    </section>
+
+    <hr class="rule rule--thick" />
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="colophon">
+      <span class="colophon__left">&copy; 2024 SUMITH. ALL RIGHTS RESERVED.</span>
+      <span class="colophon__center">THANK YOU FOR READING.</span>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light / dark">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <line x1="12" y1="2.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.5"/>
+            <line x1="2.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21.5" y2="12"/>
+            <line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/>
+            <line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/>
+          </g>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

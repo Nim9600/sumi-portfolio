@@ -1,6 +1,6 @@
 /* =========================================================
    Sumith — Digital Newspaper Portfolio
-   styles.css  (shared: home + about)
+   styles.css  (shared: home + about + projects)
    ========================================================= */
 
 :root {
@@ -13,6 +13,7 @@
   --badge-bg: #171614;
   --badge-fg: #f4f1ea;
   --quote-bg: #ece7dc;
+  --card-bg: #efece4;
   --serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   --maxw: 1180px;
@@ -30,6 +31,7 @@ html[data-theme="dark"] {
   --badge-bg: #f2efe7;
   --badge-fg: #161513;
   --quote-bg: #211f1b;
+  --card-bg: #201f1b;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -195,11 +197,9 @@ html[data-theme="dark"] .icon-moon { display: block; }
 .about-hero__img { border: 1px solid var(--line-strong); overflow: hidden; aspect-ratio: 3 / 3.4; background: #ddd; margin-top: 6px; }
 .about-hero__img img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; filter: grayscale(100%); }
 
-/* Section heading */
 .sec { padding: 30px 0; border-top: 1px solid var(--line); }
 .sec__title { font-family: var(--serif); font-weight: 500; font-size: 30px; line-height: 1; margin-bottom: 26px; }
 
-/* My Journey */
 .journey { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 .journey__narrative p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.65; margin-bottom: 14px; max-width: 40ch; }
 .timeline { list-style: none; position: relative; }
@@ -210,27 +210,23 @@ html[data-theme="dark"] .icon-moon { display: block; }
 .timeline__role { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
 .timeline__desc { font-size: 13px; color: var(--ink-soft); line-height: 1.5; max-width: 34ch; }
 
-/* What I Do / My Values — icon grids (DESKTOP: 4 columns) */
 .icon-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
 .icon-card__ico { display: block; width: 26px; height: 26px; flex: 0 0 26px; margin-bottom: 14px; color: var(--ink); }
 .icon-card__ico svg { width: 26px !important; height: 26px !important; display: block; max-width: 100%; max-height: 100%; }
 .icon-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
 .icon-card p { font-size: 12.5px; color: var(--ink-soft); line-height: 1.55; max-width: 26ch; }
 
-/* Tools I Use — boxed icon row */
 .tool-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; max-width: 620px; }
 .tool { border: 1px solid var(--line-strong); aspect-ratio: 1 / 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 10px; }
 .tool__ico { display: block; width: 26px; height: 26px; flex: 0 0 26px; color: var(--ink); }
 .tool__ico svg { width: 26px !important; height: 26px !important; display: block; max-width: 100%; max-height: 100%; }
 .tool__name { font-size: 11px; color: var(--ink-soft); letter-spacing: .02em; }
 
-/* Quote block */
 .quote-block { background: var(--quote-bg); padding: 44px 40px; margin: 30px 0; }
 .quote-block__mark { font-family: var(--serif); font-size: 48px; line-height: .5; display: block; margin-bottom: 10px; }
 .quote-block__text { font-family: var(--serif); font-weight: 400; font-size: clamp(20px, 2.4vw, 27px); line-height: 1.32; margin-bottom: 14px; max-width: 30ch; }
 .quote-block__author { font-size: 12.5px; color: var(--ink-soft); }
 
-/* Let's connect (about) */
 .connect-row { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 24px; padding: 6px 0 4px; }
 .connect-row__left .sec__title { margin-bottom: 12px; }
 .connect-row__body { font-size: 13px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 12px; max-width: 34ch; }
@@ -240,6 +236,60 @@ html[data-theme="dark"] .icon-moon { display: block; }
 .social-set a:hover { color: var(--ink); }
 .social-set .ico { display: inline-flex; width: 18px; height: 18px; flex: 0 0 18px; }
 .social-set .ico svg { width: 18px !important; height: 18px !important; display: block; max-width: 100%; max-height: 100%; }
+
+/* =========================================================
+   PROJECTS PAGE
+   ========================================================= */
+.breadcrumb { display: flex; gap: 8px; align-items: center; font-size: 11px; letter-spacing: .12em; color: var(--ink-mute); font-weight: 500; padding: 20px 0 14px; }
+.breadcrumb a:hover { color: var(--ink); }
+.breadcrumb .sep { opacity: .6; }
+
+/* Header row: title+lead on left, filter dropdown on right */
+.proj-head { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 30px; padding-bottom: 22px; }
+.proj-head__title { font-family: var(--serif); font-weight: 500; font-size: clamp(38px, 5vw, 60px); line-height: 1; margin-bottom: 16px; }
+.proj-head__lead { font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; max-width: 42ch; }
+.filter-by { display: flex; align-items: center; gap: 12px; padding-top: 10px; }
+.filter-by__label { font-size: 11px; letter-spacing: .14em; color: var(--ink-soft); font-weight: 500; }
+.select-wrap { position: relative; }
+.select-wrap select {
+  appearance: none; -webkit-appearance: none; background: transparent;
+  border: 1px solid var(--line-strong); color: var(--ink);
+  font-family: var(--sans); font-size: 12.5px; font-weight: 500;
+  padding: 9px 34px 9px 14px; cursor: pointer; min-width: 150px; border-radius: 0;
+}
+.select-wrap::after { content: ""; position: absolute; right: 13px; top: 50%; width: 7px; height: 7px; border-right: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); transform: translateY(-70%) rotate(45deg); pointer-events: none; }
+
+/* Category tabs */
+.cat-tabs { display: flex; flex-wrap: wrap; gap: 26px; padding: 8px 0 26px; border-bottom: 1px solid var(--line); margin-bottom: 30px; }
+.cat-tab { background: none; border: none; cursor: pointer; font-family: var(--sans); font-size: 13.5px; color: var(--ink-soft); padding: 0 0 6px; position: relative; transition: color .2s; }
+.cat-tab:hover { color: var(--ink); }
+.cat-tab.active { color: var(--ink); font-weight: 600; }
+.cat-tab.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -27px; height: 2px; background: var(--ink); }
+
+/* Projects grid */
+.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 30px; }
+.pcard { display: flex; flex-direction: column; }
+.pcard.is-hidden { display: none; }
+.pcard__thumb { border: 1px solid var(--line-strong); aspect-ratio: 16 / 11; overflow: hidden; margin-bottom: 16px; background: var(--card-bg); }
+.pcard__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.pcard__title { font-size: 17px; font-weight: 600; margin-bottom: 9px; }
+.pcard__desc { font-size: 13px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 12px; }
+.pcard__cats { font-size: 12px; color: var(--ink-mute); margin-bottom: 14px; }
+.pcard__link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; margin-top: auto; transition: gap .25s ease; }
+.pcard__link span { transition: transform .25s ease; }
+.pcard__link:hover { gap: 12px; }
+.pcard__link:hover span { transform: translateX(3px); }
+
+/* CTA banner */
+.cta { border: 1px solid var(--line); background: transparent; text-align: center; padding: 40px 24px; margin: 40px 0 4px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.cta__ico { width: 34px; height: 34px; color: var(--ink); margin-bottom: 4px; }
+.cta__ico svg { width: 34px !important; height: 34px !important; }
+.cta__title { font-family: var(--serif); font-weight: 500; font-size: 26px; line-height: 1; }
+.cta__body { font-size: 13px; color: var(--ink-soft); margin-bottom: 8px; }
+.cta__btn { display: inline-flex; align-items: center; gap: 9px; background: var(--badge-bg); color: var(--badge-fg); font-size: 13px; font-weight: 600; padding: 11px 20px; transition: gap .25s ease; }
+.cta__btn span { transition: transform .25s ease; }
+.cta__btn:hover { gap: 13px; }
+.cta__btn:hover span { transform: translateX(3px); }
 
 /* =========================================================
    RESPONSIVE — TABLET (≤1024px)
@@ -263,25 +313,30 @@ html[data-theme="dark"] .icon-moon { display: block; }
   .about-hero__img { aspect-ratio: 16 / 11; max-width: 100%; }
   .journey { grid-template-columns: 1fr; gap: 30px; }
   .journey__narrative { display: none; }
-
-  /* What I Do / My Values → stacked list rows.
-     FIX: icon spans rows in col 1; heading + paragraph BOTH sit in the wide col 2 */
   .icon-grid { grid-template-columns: 1fr; gap: 0; }
-  .icon-card {
-    display: grid;
-    grid-template-columns: 26px 1fr;   /* icon | text */
-    column-gap: 16px;
-    row-gap: 6px;
-    padding: 18px 0;
-    border-top: 1px solid var(--line);
-    align-items: start;
-  }
+  .icon-card { display: grid; grid-template-columns: 26px 1fr; column-gap: 16px; row-gap: 6px; padding: 18px 0; border-top: 1px solid var(--line); align-items: start; }
   .icon-card:first-child { border-top: none; }
   .icon-card__ico { grid-column: 1; grid-row: 1 / span 2; margin-bottom: 0; align-self: start; }
   .icon-card h3 { grid-column: 2; grid-row: 1; margin-bottom: 0; }
   .icon-card p  { grid-column: 2; grid-row: 2; max-width: none; }
-
   .tool-row { grid-template-columns: repeat(3, 1fr); max-width: 460px; }
+
+  /* ---- Projects: title/lead stack, filter drops below; cards become list rows ---- */
+  .proj-head { grid-template-columns: 1fr; gap: 18px; }
+  .filter-by { padding-top: 0; }
+  .proj-grid { grid-template-columns: 1fr; gap: 0; }
+  .pcard {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    column-gap: 24px;
+    align-items: center;
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+  }
+  .pcard:first-child { border-top: none; }
+  .pcard__thumb { grid-row: 1 / span 5; margin-bottom: 0; aspect-ratio: 16 / 11; }
+  .pcard__title { margin-bottom: 8px; }
+  .pcard__link { margin-top: 6px; }
 }
 
 /* =========================================================
@@ -309,20 +364,24 @@ html[data-theme="dark"] .icon-moon { display: block; }
   .about-hero__img { aspect-ratio: 4 / 4.4; max-width: 260px; }
   .tool-row { grid-template-columns: repeat(3, 1fr); max-width: none; }
   .quote-block { padding: 30px 22px; }
-
-  /* What I Do → compact list rows with chevron.
-     Keep the SAME robust grid (icon col1 / text col2), just add a chevron col */
-  .whatido .icon-card {
-    grid-template-columns: 22px 1fr auto;
-    column-gap: 14px;
-    align-items: center;
-  }
+  .whatido .icon-card { grid-template-columns: 22px 1fr auto; column-gap: 14px; align-items: center; }
   .whatido .icon-card__ico { grid-column: 1; grid-row: 1; align-self: center; width: 22px; height: 22px; }
   .whatido .icon-card__ico svg { width: 22px !important; height: 22px !important; }
   .whatido .icon-card h3 { grid-column: 2; grid-row: 1; font-size: 14px; }
   .whatido .icon-card p  { display: none; }
   .whatido .icon-card::after { content: "\203A"; grid-column: 3; grid-row: 1; font-size: 20px; color: var(--ink-mute); line-height: 1; }
-
   .connect-row { grid-template-columns: 1fr; }
   .social-set { flex-wrap: wrap; gap: 16px; }
+
+  /* ---- Projects mobile: single column cards (image on top) ---- */
+  .select-wrap select { width: 100%; }
+  .filter-by { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .select-wrap { width: 100%; }
+  .cat-tabs { gap: 14px; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+  .cat-tab { white-space: nowrap; }
+  .cat-tab.active::after { bottom: -15px; }
+  .proj-grid { grid-template-columns: 1fr; }
+  .pcard { display: flex; flex-direction: column; border-top: none; padding: 0 0 30px; }
+  .pcard__thumb { margin-bottom: 14px; }
+  .pcard__link { margin-top: 0; }
 }

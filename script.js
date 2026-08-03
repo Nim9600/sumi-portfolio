@@ -1,6 +1,6 @@
 /* =========================================================
    Sumith — Digital Newspaper Portfolio
-   script.js  (shared: home + about)
+   script.js  (shared: home + about + projects)
    ========================================================= */
 (function () {
   "use strict";
@@ -43,7 +43,7 @@
   var heroTitle = document.querySelector(".hero__title");
   function fitHero() {
     if (!heroTitle) return;
-    var avail = heroTitle.parentElement.clientWidth - 6; // small safety buffer
+    var avail = heroTitle.parentElement.clientWidth - 6;
     if (avail <= 0) return;
     var lines = heroTitle.innerHTML.split(/<br\s*\/?>/i);
     var probe = document.createElement("span");
@@ -65,10 +65,54 @@
     else window.addEventListener("load", fitHero);
   }
 
+  /* ---------- Projects category filter (projects page only) ---------- */
+  var catTabs = document.getElementById("catTabs");
+  var catSelect = document.getElementById("catSelect");
+  var projGrid = document.getElementById("projGrid");
+  if (projGrid) {
+    var cards = Array.prototype.slice.call(projGrid.querySelectorAll(".pcard"));
+
+    function applyFilter(cat) {
+      cards.forEach(function (card) {
+        var cats = (card.getAttribute("data-cats") || "").split(/\s+/);
+        var show = (cat === "all") || cats.indexOf(cat) !== -1;
+        card.classList.toggle("is-hidden", !show);
+      });
+    }
+
+    function setActiveTab(cat) {
+      if (!catTabs) return;
+      catTabs.querySelectorAll(".cat-tab").forEach(function (t) {
+        t.classList.toggle("active", t.getAttribute("data-cat") === cat);
+      });
+    }
+
+    // Tabs
+    if (catTabs) {
+      catTabs.addEventListener("click", function (e) {
+        var btn = e.target.closest(".cat-tab");
+        if (!btn) return;
+        var cat = btn.getAttribute("data-cat");
+        setActiveTab(cat);
+        if (catSelect) catSelect.value = cat;
+        applyFilter(cat);
+      });
+    }
+
+    // Dropdown (keeps tabs in sync)
+    if (catSelect) {
+      catSelect.addEventListener("change", function () {
+        var cat = catSelect.value;
+        setActiveTab(cat);
+        applyFilter(cat);
+      });
+    }
+  }
+
   /* ---------- Subtle reveal-on-scroll ---------- */
   if ("IntersectionObserver" in window) {
     var targets = document.querySelectorAll(
-      ".col, .project, .fcol, .hero__title, .section-title, .about-hero, .sec, .quote-block"
+      ".col, .project, .fcol, .hero__title, .section-title, .about-hero, .sec, .quote-block, .pcard, .cta"
     );
     targets.forEach(function (el) {
       el.style.opacity = "0";
