@@ -15,7 +15,7 @@
     <!-- ===================== MASTHEAD / NAV ===================== -->
     <header class="masthead">
       <div class="masthead__inner">
-        <span class="masthead__brand">SUMITH</span>
+        <span class="masthead__brand"><a href="index.html">SUMITH</a></span>
         <span class="masthead__center">PRODUCT DESIGNER &amp; CREATOR</span>
         <span class="masthead__right">BANGALORE, INDIA</span>
         <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
@@ -23,8 +23,7 @@
         </button>
       </div>
       <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
+        <a href="about.html">About</a>
         <a href="#work">Work</a>
         <a href="#playground">Playground</a>
         <a href="#connect">Connect</a>
@@ -45,7 +44,6 @@
 
     <!-- ===================== MAIN 3-COLUMN GRID ===================== -->
     <section class="lead-grid">
-      <!-- ABOUT ME -->
       <div class="col col--about" id="about">
         <span class="tag">ABOUT ME</span>
         <h2 class="col__headline">I design meaningful products and capture stories that matter.</h2>
@@ -55,17 +53,15 @@
           designing, I travel, explore new places, and document experiences
           through my YouTube channel Life of Us.
         </p>
-        <a href="#about" class="link-arrow link-arrow--plain">More about me <span>&rarr;</span></a>
+        <a href="about.html" class="link-arrow link-arrow--plain">More about me <span>&rarr;</span></a>
       </div>
 
-      <!-- PORTRAIT -->
       <div class="col col--portrait">
         <div class="portrait">
-          <img src="./assets/portrait.png" alt="Portrait of Sumith wearing sunglasses" />
+          <img src="assets/portrait.png" alt="Portrait of Sumith wearing sunglasses" />
         </div>
       </div>
 
-      <!-- EXPERIENCE -->
       <div class="col col--experience" id="experience">
         <span class="tag">EXPERIENCE</span>
         <div class="xp">
@@ -83,7 +79,7 @@
           <h3 class="xp__role">Junior Designer</h3>
           <p class="xp__desc">Started my journey in design and developed my core skills.</p>
         </div>
-        <a href="#experience" class="link-arrow link-arrow--plain">View full journey <span>&rarr;</span></a>
+        <a href="about.html#journey" class="link-arrow link-arrow--plain">View full journey <span>&rarr;</span></a>
       </div>
     </section>
 
@@ -99,27 +95,19 @@
 
       <div class="projects">
         <article class="project">
-          <div class="project__thumb">
-            <img src="./assets/project-1.svg" alt="GIIS Design System dashboard" />
-          </div>
+          <div class="project__thumb"><img src="assets/project-1.svg" alt="GIIS Design System dashboard" /></div>
           <h3 class="project__title">GIIS Design System</h3>
           <p class="project__desc">Enterprise design system built for GIIS across platforms for consistency and scalability.</p>
           <a href="#work" class="link-arrow">View case study <span>&rarr;</span></a>
         </article>
-
         <article class="project">
-          <div class="project__thumb">
-            <img src="./assets/project-2.svg" alt="Media Management Platform interface" />
-          </div>
+          <div class="project__thumb"><img src="assets/project-2.svg" alt="Media Management Platform interface" /></div>
           <h3 class="project__title">Media Management Platform</h3>
           <p class="project__desc">A unified platform to manage, preview and distribute digital media content efficiently.</p>
           <a href="#work" class="link-arrow">View case study <span>&rarr;</span></a>
         </article>
-
         <article class="project">
-          <div class="project__thumb">
-            <img src="./assets/project-3.svg" alt="Project Library Dashboard" />
-          </div>
+          <div class="project__thumb"><img src="assets/project-3.svg" alt="Project Library Dashboard" /></div>
           <h3 class="project__title">Project Library Dashboard</h3>
           <p class="project__desc">An intuitive dashboard for students to explore and manage academic projects effortlessly.</p>
           <a href="#work" class="link-arrow">View case study <span>&rarr;</span></a>
@@ -131,58 +119,30 @@
 
     <!-- ===================== BOTTOM 4-COLUMN GRID ===================== -->
     <section class="foot-grid">
-      <!-- DESIGN PLAYGROUND -->
       <div class="fcol fcol--playground" id="playground">
         <span class="label">DESIGN PLAYGROUND</span>
         <h2 class="fcol__headline">Ideas, explorations and experiments.</h2>
-        <div class="playground__img">
-          <img src="./assets/playground.svg" alt="Collage of mobile app design explorations" />
-        </div>
+        <div class="playground__img"><img src="assets/playground.svg" alt="Collage of mobile app design explorations" /></div>
         <a href="#playground" class="link-arrow link-arrow--plain">Explore more <span>&rarr;</span></a>
       </div>
 
-      <!-- TRAVEL DIARIES -->
       <div class="fcol fcol--travel">
         <span class="label">TRAVEL DIARIES</span>
         <h2 class="fcol__headline">Stories from around the world.</h2>
         <ul class="travel">
-          <li class="travel__item">
-            <span class="travel__thumb travel__thumb--1"></span>
-            <div>
-              <h4>Malaysia Diaries</h4>
-              <p>Langkawi adventures and beautiful beaches.</p>
-            </div>
-          </li>
-          <li class="travel__item">
-            <span class="travel__thumb travel__thumb--2"></span>
-            <div>
-              <h4>Bali Escape</h4>
-              <p>Exploring nature, culture and food.</p>
-            </div>
-          </li>
-          <li class="travel__item">
-            <span class="travel__thumb travel__thumb--3"></span>
-            <div>
-              <h4>Food Trails</h4>
-              <p>A journey through flavors.</p>
-            </div>
-          </li>
+          <li class="travel__item"><span class="travel__thumb travel__thumb--1"></span><div><h4>Malaysia Diaries</h4><p>Langkawi adventures and beautiful beaches.</p></div></li>
+          <li class="travel__item"><span class="travel__thumb travel__thumb--2"></span><div><h4>Bali Escape</h4><p>Exploring nature, culture and food.</p></div></li>
+          <li class="travel__item"><span class="travel__thumb travel__thumb--3"></span><div><h4>Food Trails</h4><p>A journey through flavors.</p></div></li>
         </ul>
         <a href="#" class="link-arrow link-arrow--plain">More travel stories <span>&rarr;</span></a>
       </div>
 
-      <!-- TOOLS + QUOTE + CONNECT -->
       <div class="fcol fcol--tools">
         <div class="tools-quote">
           <div class="tools">
             <span class="label">TOOLS I USE</span>
             <ul class="tools__list">
-              <li>Figma</li>
-              <li>Principle</li>
-              <li>Framer</li>
-              <li>Photoshop</li>
-              <li>Illustrator</li>
-              <li>Notion</li>
+              <li>Figma</li><li>Principle</li><li>Framer</li><li>Photoshop</li><li>Illustrator</li><li>Notion</li>
             </ul>
           </div>
           <div class="quote">
@@ -192,7 +152,6 @@
           </div>
         </div>
 
-        <!-- LET'S CONNECT -->
         <div class="connect" id="connect">
           <span class="label">LET&rsquo;S CONNECT</span>
           <h2 class="connect__headline">Have a project in mind?</h2>
@@ -216,14 +175,10 @@
         <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
           <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
           <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-            <line x1="12" y1="2.5" x2="12" y2="5"/>
-            <line x1="12" y1="19" x2="12" y2="21.5"/>
-            <line x1="2.5" y1="12" x2="5" y2="12"/>
-            <line x1="19" y1="12" x2="21.5" y2="12"/>
-            <line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/>
-            <line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/>
-            <line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/>
-            <line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/>
+            <line x1="12" y1="2.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.5"/>
+            <line x1="2.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21.5" y2="12"/>
+            <line x1="4.9" y1="4.9" x2="6.6" y2="6.6"/><line x1="17.4" y1="17.4" x2="19.1" y2="19.1"/>
+            <line x1="4.9" y1="19.1" x2="6.6" y2="17.4"/><line x1="17.4" y1="6.6" x2="19.1" y2="4.9"/>
           </g>
         </svg>
         <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">

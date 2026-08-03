@@ -1,6 +1,6 @@
 /* =========================================================
    Sumith — Digital Newspaper Portfolio
-   script.js
+   script.js  (shared: home + about)
    ========================================================= */
 (function () {
   "use strict";
@@ -8,7 +8,6 @@
   /* ---------- Mobile navigation toggle ---------- */
   var menuBtn = document.getElementById("menuBtn");
   var mobileNav = document.getElementById("mobileNav");
-
   if (menuBtn && mobileNav) {
     menuBtn.addEventListener("click", function () {
       var open = mobileNav.classList.toggle("show");
@@ -40,76 +39,51 @@
     });
   }
 
-  /* ---------- Hero headline auto-fit (no overflow, keeps 2 lines) ---------- */
+  /* ---------- Hero headline auto-fit (home only) ---------- */
   var heroTitle = document.querySelector(".hero__title");
-
   function fitHero() {
     if (!heroTitle) return;
-    var container = heroTitle.parentElement;      // .hero
-    var avail = container.clientWidth;
-    if (!avail) return;
-
-    // Safety buffer so italic/serif overhang never spills past the edge
-    var BUFFER = 6; // px
-    avail = avail - BUFFER;
-
+    var avail = heroTitle.parentElement.clientWidth - 6; // small safety buffer
+    if (avail <= 0) return;
     var lines = heroTitle.innerHTML.split(/<br\s*\/?>/i);
-
     var probe = document.createElement("span");
     var cs = window.getComputedStyle(heroTitle);
-    probe.style.position = "absolute";
-    probe.style.visibility = "hidden";
-    probe.style.whiteSpace = "nowrap";
-    probe.style.fontFamily = cs.fontFamily;
-    probe.style.fontWeight = cs.fontWeight;
-    probe.style.letterSpacing = cs.letterSpacing;
-    probe.style.fontSize = "100px";
+    probe.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap;font-size:100px;" +
+      "font-family:" + cs.fontFamily + ";font-weight:" + cs.fontWeight + ";letter-spacing:" + cs.letterSpacing + ";";
     document.body.appendChild(probe);
-
     var widest = 0;
-    lines.forEach(function (ln) {
-      probe.innerHTML = ln.trim();
-      if (probe.offsetWidth > widest) widest = probe.offsetWidth;
-    });
+    lines.forEach(function (ln) { probe.innerHTML = ln.trim(); if (probe.offsetWidth > widest) widest = probe.offsetWidth; });
     document.body.removeChild(probe);
     if (!widest) return;
-
-    var size = (avail / widest) * 100;
-    var min = 24, max = 92;
-    size = Math.max(min, Math.min(max, size));
+    var size = Math.max(24, Math.min(92, (avail / widest) * 100));
     heroTitle.style.fontSize = size + "px";
   }
-
-  fitHero();
-  window.addEventListener("resize", fitHero);
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(fitHero);
-  } else {
-    window.addEventListener("load", fitHero);
+  if (heroTitle) {
+    fitHero();
+    window.addEventListener("resize", fitHero);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHero);
+    else window.addEventListener("load", fitHero);
   }
 
   /* ---------- Subtle reveal-on-scroll ---------- */
   if ("IntersectionObserver" in window) {
     var targets = document.querySelectorAll(
-      ".col, .project, .fcol, .hero__title, .section-title"
+      ".col, .project, .fcol, .hero__title, .section-title, .about-hero, .sec, .quote-block"
     );
     targets.forEach(function (el) {
       el.style.opacity = "0";
       el.style.transform = "translateY(14px)";
       el.style.transition = "opacity .6s ease, transform .6s ease";
     });
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
     targets.forEach(function (el) { io.observe(el); });
   }
 })();
