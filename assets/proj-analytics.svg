@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
+  <rect width="640" height="400" fill="#16161d"/><rect width="150" height="400" fill="#1e1e27"/>
+  <circle cx="30" cy="34" r="8" fill="#4ea1ff"/><rect x="46" y="29" width="60" height="9" rx="4" fill="#e9e7f2"/>
+  <g fill="#33333f"><rect x="24" y="78" width="100" height="8" rx="4"/><rect x="24" y="104" width="86" height="8" rx="4"/><rect x="24" y="130" width="92" height="8" rx="4"/></g>
+  <rect x="176" y="24" width="140" height="12" rx="6" fill="#e9e7f2"/>
+  <g><rect x="176" y="64" width="130" height="70" rx="10" fill="#20202a"/><rect x="322" y="64" width="130" height="70" rx="10" fill="#20202a"/><rect x="468" y="64" width="148" height="70" rx="10" fill="#20202a"/>
+     <rect x="192" y="104" width="50" height="14" rx="4" fill="#4ea1ff"/><rect x="338" y="104" width="50" height="14" rx="4" fill="#3fd18b"/><rect x="484" y="104" width="50" height="14" rx="4" fill="#e0b64a"/></g>
+  <rect x="176" y="152" width="440" height="220" rx="10" fill="#20202a"/>
+  <polyline points="200,320 250,280 300,300 350,240 400,265 450,200 500,230 560,175" fill="none" stroke="#4ea1ff" stroke-width="3"/>
+  <polyline points="200,340 250,320 300,330 350,300 400,315 450,275 500,300 560,255" fill="none" stroke="#3fd18b" stroke-width="3" opacity="0.8"/>
+  <g fill="#2b2b38"><rect x="200" y="352" width="360" height="1"/></g>
+</svg>

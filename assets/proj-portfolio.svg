@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
+  <rect width="640" height="400" fill="#f4f1ea"/>
+  <rect x="40" y="30" width="560" height="340" rx="6" fill="#faf8f2" stroke="#e4e0d5"/>
+  <line x1="40" y1="72" x2="600" y2="72" stroke="#171614" stroke-width="1"/>
+  <rect x="60" y="46" width="60" height="10" rx="3" fill="#171614"/>
+  <rect x="470" y="47" width="110" height="8" rx="3" fill="#b7b1a6"/>
+  <text x="60" y="150" font-family="Playfair Display, serif" font-size="46" fill="#171614">Designing</text>
+  <text x="60" y="198" font-family="Playfair Display, serif" font-size="46" fill="#171614">experiences.</text>
+  <line x1="60" y1="230" x2="580" y2="230" stroke="#171614" stroke-width="1"/>
+  <g fill="#e7e3d8" stroke="#cfc9bd"><rect x="60" y="250" width="160" height="96" rx="4"/><rect x="238" y="250" width="160" height="96" rx="4"/><rect x="416" y="250" width="164" height="96" rx="4"/></g>
+</svg>
