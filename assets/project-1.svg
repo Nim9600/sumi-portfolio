@@ -4,12 +4,9 @@
   <circle cx="30" cy="34" r="9" fill="#6c4ee0"/>
   <rect x="48" y="29" width="70" height="9" rx="4" fill="#2b2540"/>
   <g fill="#c9c4de">
-    <rect x="24" y="78" width="102" height="8" rx="4"/>
-    <rect x="24" y="104" width="90" height="8" rx="4"/>
-    <rect x="24" y="130" width="98" height="8" rx="4"/>
-    <rect x="24" y="156" width="80" height="8" rx="4"/>
-    <rect x="24" y="182" width="94" height="8" rx="4"/>
-    <rect x="24" y="208" width="70" height="8" rx="4"/>
+    <rect x="24" y="78" width="102" height="8" rx="4"/><rect x="24" y="104" width="90" height="8" rx="4"/>
+    <rect x="24" y="130" width="98" height="8" rx="4"/><rect x="24" y="156" width="80" height="8" rx="4"/>
+    <rect x="24" y="182" width="94" height="8" rx="4"/><rect x="24" y="208" width="70" height="8" rx="4"/>
   </g>
   <rect x="18" y="98" width="120" height="20" rx="6" fill="#efeafc"/>
   <rect x="150" width="490" height="52" fill="#ffffff"/>
@@ -26,21 +23,13 @@
   <rect x="484" y="118" width="40" height="16" rx="4" fill="#e0b64a"/>
   <rect x="176" y="176" width="440" height="200" rx="10" fill="#ffffff"/>
   <g fill="#e7e3f2">
-    <rect x="196" y="200" width="400" height="1"/>
-    <rect x="196" y="236" width="400" height="1"/>
-    <rect x="196" y="272" width="400" height="1"/>
-    <rect x="196" y="308" width="400" height="1"/>
+    <rect x="196" y="200" width="400" height="1"/><rect x="196" y="236" width="400" height="1"/>
+    <rect x="196" y="272" width="400" height="1"/><rect x="196" y="308" width="400" height="1"/>
     <rect x="196" y="344" width="400" height="1"/>
   </g>
   <g fill="#cfc9e2">
-    <rect x="196" y="212" width="150" height="8" rx="4"/>
-    <rect x="196" y="248" width="120" height="8" rx="4"/>
-    <rect x="196" y="284" width="160" height="8" rx="4"/>
-    <rect x="196" y="320" width="110" height="8" rx="4"/>
+    <rect x="196" y="212" width="150" height="8" rx="4"/><rect x="196" y="248" width="120" height="8" rx="4"/>
+    <rect x="196" y="284" width="160" height="8" rx="4"/><rect x="196" y="320" width="110" height="8" rx="4"/>
   </g>
-  <g fill="#8f79e8">
-    <circle cx="580" cy="216" r="6"/>
-    <circle cx="580" cy="252" r="6"/>
-    <circle cx="580" cy="288" r="6"/>
-  </g>
+  <g fill="#8f79e8"><circle cx="580" cy="216" r="6"/><circle cx="580" cy="252" r="6"/><circle cx="580" cy="288" r="6"/></g>
 </svg>

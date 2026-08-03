@@ -22,10 +22,8 @@
     <rect x="12" y="16" width="98" height="90" rx="12" fill="#3fa36b"/>
     <rect x="12" y="116" width="98" height="10" rx="5" fill="#34333d"/>
     <rect x="12" y="134" width="64" height="10" rx="5" fill="#34333d"/>
-    <circle cx="30" cy="176" r="16" fill="#26252e"/>
-    <circle cx="70" cy="176" r="16" fill="#26252e"/>
-    <circle cx="30" cy="216" r="16" fill="#26252e"/>
-    <circle cx="70" cy="216" r="16" fill="#26252e"/>
+    <circle cx="30" cy="176" r="16" fill="#26252e"/><circle cx="70" cy="176" r="16" fill="#26252e"/>
+    <circle cx="30" cy="216" r="16" fill="#26252e"/><circle cx="70" cy="216" r="16" fill="#26252e"/>
   </g>
   <g transform="translate(452,54)">
     <rect width="164" height="292" rx="16" fill="#201f26" stroke="#2f2e38"/>
