@@ -195,7 +195,7 @@ html[data-theme="dark"] .icon-moon { display: block; }
 .about-hero__img { border: 1px solid var(--line-strong); overflow: hidden; aspect-ratio: 3 / 3.4; background: #ddd; margin-top: 6px; }
 .about-hero__img img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; filter: grayscale(100%); }
 
-/* Section heading (serif, thin rule above) */
+/* Section heading */
 .sec { padding: 30px 0; border-top: 1px solid var(--line); }
 .sec__title { font-family: var(--serif); font-weight: 500; font-size: 30px; line-height: 1; margin-bottom: 26px; }
 
@@ -210,10 +210,10 @@ html[data-theme="dark"] .icon-moon { display: block; }
 .timeline__role { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
 .timeline__desc { font-size: 13px; color: var(--ink-soft); line-height: 1.5; max-width: 34ch; }
 
-/* What I Do / My Values — icon grids */
+/* What I Do / My Values — icon grids (DESKTOP: 4 columns) */
 .icon-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
 .icon-card__ico { display: block; width: 26px; height: 26px; flex: 0 0 26px; margin-bottom: 14px; color: var(--ink); }
-.icon-card__ico svg { width: 26px !important; height: 26px !important; display: block; }
+.icon-card__ico svg { width: 26px !important; height: 26px !important; display: block; max-width: 100%; max-height: 100%; }
 .icon-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
 .icon-card p { font-size: 12.5px; color: var(--ink-soft); line-height: 1.55; max-width: 26ch; }
 
@@ -221,10 +221,10 @@ html[data-theme="dark"] .icon-moon { display: block; }
 .tool-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; max-width: 620px; }
 .tool { border: 1px solid var(--line-strong); aspect-ratio: 1 / 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 10px; }
 .tool__ico { display: block; width: 26px; height: 26px; flex: 0 0 26px; color: var(--ink); }
-.tool__ico svg { width: 26px !important; height: 26px !important; display: block; }
+.tool__ico svg { width: 26px !important; height: 26px !important; display: block; max-width: 100%; max-height: 100%; }
 .tool__name { font-size: 11px; color: var(--ink-soft); letter-spacing: .02em; }
 
-/* Quote block (full-width, grey) */
+/* Quote block */
 .quote-block { background: var(--quote-bg); padding: 44px 40px; margin: 30px 0; }
 .quote-block__mark { font-family: var(--serif); font-size: 48px; line-height: .5; display: block; margin-bottom: 10px; }
 .quote-block__text { font-family: var(--serif); font-weight: 400; font-size: clamp(20px, 2.4vw, 27px); line-height: 1.32; margin-bottom: 14px; max-width: 30ch; }
@@ -239,12 +239,11 @@ html[data-theme="dark"] .icon-moon { display: block; }
 .social-set a { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--ink-soft); }
 .social-set a:hover { color: var(--ink); }
 .social-set .ico { display: inline-flex; width: 18px; height: 18px; flex: 0 0 18px; }
-.social-set .ico svg { width: 18px !important; height: 18px !important; display: block; }
+.social-set .ico svg { width: 18px !important; height: 18px !important; display: block; max-width: 100%; max-height: 100%; }
 
-/* Global safety net — icon SVGs must never exceed their container box */
-.icon-card__ico svg, .tool__ico svg, .social-set .ico svg { max-width: 100%; max-height: 100%; }
-
-/* ======================= RESPONSIVE ======================= */
+/* =========================================================
+   RESPONSIVE — TABLET (≤1024px)
+   ========================================================= */
 @media (max-width: 1024px) {
   /* ---- Home ---- */
   .lead-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -263,15 +262,31 @@ html[data-theme="dark"] .icon-moon { display: block; }
   .about-hero__lead { max-width: 34ch; }
   .about-hero__img { aspect-ratio: 16 / 11; max-width: 100%; }
   .journey { grid-template-columns: 1fr; gap: 30px; }
-  .journey__narrative { display: none; }              /* tablet shows timeline first, like ref */
+  .journey__narrative { display: none; }
+
+  /* What I Do / My Values → stacked list rows.
+     FIX: icon spans rows in col 1; heading + paragraph BOTH sit in the wide col 2 */
   .icon-grid { grid-template-columns: 1fr; gap: 0; }
-  .icon-card { display: grid; grid-template-columns: 26px 1fr; gap: 14px; padding: 16px 0; border-top: 1px solid var(--line); align-items: start; }
+  .icon-card {
+    display: grid;
+    grid-template-columns: 26px 1fr;   /* icon | text */
+    column-gap: 16px;
+    row-gap: 6px;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    align-items: start;
+  }
   .icon-card:first-child { border-top: none; }
-  .icon-card__ico { margin-bottom: 0; }
-  .icon-card p { max-width: none; }
-  .tool-row { grid-template-columns: repeat(3, 1fr); max-width: 420px; }
+  .icon-card__ico { grid-column: 1; grid-row: 1 / span 2; margin-bottom: 0; align-self: start; }
+  .icon-card h3 { grid-column: 2; grid-row: 1; margin-bottom: 0; }
+  .icon-card p  { grid-column: 2; grid-row: 2; max-width: none; }
+
+  .tool-row { grid-template-columns: repeat(3, 1fr); max-width: 460px; }
 }
 
+/* =========================================================
+   RESPONSIVE — MOBILE (≤620px)
+   ========================================================= */
 @media (max-width: 620px) {
   :root { --pad: 18px; }
   .masthead__inner { grid-template-columns: 1fr auto; grid-template-areas: "brand menu" "center center" "right right"; row-gap: 6px; }
@@ -294,11 +309,20 @@ html[data-theme="dark"] .icon-moon { display: block; }
   .about-hero__img { aspect-ratio: 4 / 4.4; max-width: 260px; }
   .tool-row { grid-template-columns: repeat(3, 1fr); max-width: none; }
   .quote-block { padding: 30px 22px; }
-  /* What I Do → list rows with chevrons */
-  .whatido .icon-card { grid-template-columns: 22px 1fr auto; align-items: center; }
-  .whatido .icon-card p { display: none; }
-  .whatido .icon-card h3 { margin-bottom: 0; font-size: 14px; }
-  .whatido .icon-card::after { content: "›"; font-size: 20px; color: var(--ink-mute); line-height: 1; }
+
+  /* What I Do → compact list rows with chevron.
+     Keep the SAME robust grid (icon col1 / text col2), just add a chevron col */
+  .whatido .icon-card {
+    grid-template-columns: 22px 1fr auto;
+    column-gap: 14px;
+    align-items: center;
+  }
+  .whatido .icon-card__ico { grid-column: 1; grid-row: 1; align-self: center; width: 22px; height: 22px; }
+  .whatido .icon-card__ico svg { width: 22px !important; height: 22px !important; }
+  .whatido .icon-card h3 { grid-column: 2; grid-row: 1; font-size: 14px; }
+  .whatido .icon-card p  { display: none; }
+  .whatido .icon-card::after { content: "\203A"; grid-column: 3; grid-row: 1; font-size: 20px; color: var(--ink-mute); line-height: 1; }
+
   .connect-row { grid-template-columns: 1fr; }
   .social-set { flex-wrap: wrap; gap: 16px; }
 }
